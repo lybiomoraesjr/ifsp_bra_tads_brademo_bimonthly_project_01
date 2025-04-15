@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 class PostDetails extends StatelessWidget {
   const PostDetails({super.key});
 
@@ -12,3 +14,4 @@ class PostDetails extends StatelessWidget {
     );
   }
 }
+
