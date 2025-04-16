@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/constants/Theme.dart';
+import 'package:flutter_application_1/constants/colors.dart';
 import 'package:flutter_application_1/pages/home_page.dart';
+import 'package:flutter_application_1/pages/profile_page.dart';
 
 void main() {
   runApp(const MainApp());
@@ -12,18 +14,13 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(
-        primaryColor: CustomColors.primary,
-        scaffoldBackgroundColor: CustomColors.bgColorScreen,
-        appBarTheme: AppBarTheme(
-          backgroundColor: CustomColors.white,
-          foregroundColor: CustomColors.black,
-        ),
-        textTheme: const TextTheme(
-          bodyMedium: TextStyle(color: CustomColors.text),
-        ),
-      ),
-      home: HomePage(),
+      title: 'Meu App',
+      theme: customTheme,
+      initialRoute: '/',
+      routes: {
+        '/': (context) => HomePage(),
+        '/profile': (context) => const ProfilePage(),
+      },
     );
   }
 }
