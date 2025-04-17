@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/pages/post_details.dart';
 
 class ArticleCard extends StatelessWidget {
   final Map<String, String> article;
@@ -12,7 +13,6 @@ class ArticleCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // ✅ Imagem com Network
           ClipRRect(
             borderRadius: BorderRadius.vertical(top: Radius.circular(12)),
             child: Image.network(
@@ -47,9 +47,25 @@ class ArticleCard extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 12, right: 12, bottom: 12),
-            child: Text(
-              "View article",
-              style: TextStyle(color: Colors.blue),
+            child: TextButton(
+              onPressed: () {
+                // Add your navigation or action logic here
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => PostDetails(
+                      title: article['title']!,
+                      description: article['description']!,
+                      imageUrl: article['image']!,
+                      date: article['date']!,
+                    ),
+                  ),
+                );
+              },
+              child: Text(
+                "View article",
+                style: TextStyle(color: Colors.blue),
+              ),
             ),
           ),
         ],
