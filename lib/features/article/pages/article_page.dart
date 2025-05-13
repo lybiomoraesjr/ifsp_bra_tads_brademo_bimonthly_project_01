@@ -84,6 +84,16 @@ class ArticlePage extends StatelessWidget {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(content: Text('Adicionado aos favoritos')),
+          );
+        },
+        backgroundColor: Colors.deepPurple,
+        tooltip: 'Avaliar artigo',
+        child: const Icon(Icons.star_rate),
+      ),
     );
   }
 }
