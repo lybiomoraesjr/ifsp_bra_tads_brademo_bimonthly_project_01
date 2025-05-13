@@ -11,7 +11,7 @@ class Input extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      controller: controller ?? TextEditingController(),
+      controller: controller,
       style: TextStyle(height: 0.85, fontSize: 14.0, color: CustomColors.icon),
       textAlignVertical: TextAlignVertical(y: 0.6),
       decoration: InputDecoration(

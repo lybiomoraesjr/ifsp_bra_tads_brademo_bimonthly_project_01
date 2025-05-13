@@ -136,20 +136,13 @@ class _SocialLoginSection extends StatelessWidget {
                 _SocialButton(
                   icon: FontAwesomeIcons.github,
                   label: "GITHUB",
-                  style: TextStyle(
-                    color: CustomColors.black,
-                    fontSize: 13,
-                  ),
+                  style: TextStyle(color: CustomColors.black, fontSize: 13),
                 ),
                 _SocialButton(
                   icon: FontAwesomeIcons.google,
                   label: "GOOGLE",
-                  style: TextStyle(
-                   fontSize: 13, 
-                  color: CustomColors.black,
-                  ),
+                  style: TextStyle(fontSize: 13, color: CustomColors.black),
                 ),
-                
               ],
             ),
           ),
@@ -164,7 +157,11 @@ class _SocialButton extends StatelessWidget {
   final String label;
   final TextStyle style;
 
-  const _SocialButton({required this.icon, required this.label, required this.style});
+  const _SocialButton({
+    required this.icon,
+    required this.label,
+    required this.style,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -191,10 +188,7 @@ class _SocialButton extends StatelessWidget {
             children: [
               Icon(icon, size: AppFontSizes.sm + 1),
               const SizedBox(width: 5),
-              Text(
-                label,
-                style: style,
-              ),
+              Text(label, style: style),
             ],
           ),
         ),
@@ -243,6 +237,7 @@ class _CredentialsFormState extends State<_CredentialsForm> {
           Padding(
             padding: const EdgeInsets.all(AppSpacing.sm + 1),
             child: Input(
+              controller: widget.nameController,
               placeholder: "Name",
               prefixIcon: const Icon(Icons.person),
             ),
@@ -250,6 +245,7 @@ class _CredentialsFormState extends State<_CredentialsForm> {
           Padding(
             padding: const EdgeInsets.all(AppSpacing.sm + 1),
             child: Input(
+              controller: widget.emailController,
               placeholder: "Email",
               prefixIcon: const Icon(Icons.email),
             ),
@@ -257,6 +253,7 @@ class _CredentialsFormState extends State<_CredentialsForm> {
           Padding(
             padding: const EdgeInsets.all(AppSpacing.sm + 1),
             child: Input(
+              controller: widget.passwordController,
               placeholder: "Password",
               prefixIcon: const Icon(Icons.lock),
             ),
@@ -326,10 +323,10 @@ class _CredentialsFormState extends State<_CredentialsForm> {
                   id: DateTime.now().millisecondsSinceEpoch.toString(),
                   email: widget.emailController.text,
                   password: widget.passwordController.text,
-                  personId: '',
                 );
+
                 print(
-                  'Usuário criado: id=`${user.id}`, email=`${user.email}`, personId=`${user.personId}`',
+                  '\n\nUsuário criado:\n  id=`${user.id}`\n  email=`${user.email}`\n  password=`${user.password}`\n\n',
                 );
                 Navigator.pushNamed(context, RouteNames.home);
               },
