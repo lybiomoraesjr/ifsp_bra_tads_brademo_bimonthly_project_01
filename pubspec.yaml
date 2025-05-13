@@ -1,0 +1,33 @@
+name: flutter_application_1
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.7.0
+
+dependencies:
+  carousel_slider: ^5.0.0
+  flutter:
+    sdk: flutter
+  google_fonts: ^6.2.1
+  scrollable_positioned_list: ^0.3.8
+  url_launcher: ^6.3.1
+  font_awesome_flutter: ^10.7.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/
+    - assets/backgrounds/
+    - assets/logos/
+
+    # Mock
+    - assets/mock/articles/
+    - assets/mock/profile/
+    - assets/mock/profile/album/
